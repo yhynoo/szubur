@@ -25,9 +25,7 @@ async function findSimilar(transcriptionString) {
         .trim()
 
     const similarities = new Deno.Command('python3', { args: [ Deno.cwd() + '/ai/ai_similarity_loader.py', queryClean ] })
-    console.log('halo')
-    const { stdout, stderr } = await similarities.output();
-    if (stderr) console.log(new TextDecoder().decode(stderr))
+    const { stdout } = await similarities.output()
     return new TextDecoder().decode(stdout)
 }
 
@@ -72,10 +70,7 @@ export async function printQuery(queryString) {
     const { transcriptionArray, transcriptionString } = cleanCDLITranscriptions(queryString)
 
     const results = await findSimilar(transcriptionString)
-    console.log(results)
-
     const parsedResults = JSON.parse(results.replace(/'/g, '"'))
-    console.log(parsedResults)
 
     const prediction = await makePrediction(transcriptionString)
     const { foundTimeExpressions, foundToponyms } = checkFeatures(transcriptionArray)
