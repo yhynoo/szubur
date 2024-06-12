@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href ='style.css'>
+    <link rel="icon" href = 'gem.webp'>
+    
+    <title>szubur</title>
+</head>
+<body class='ugnBody'>
+    <div class='ugnContainer'>
+        <div class='ugnDiv'>
+            <strong>szubur</strong>
+            <p>paste the transcription of an uruk period tablet and press [return]<br>
+            to let szubur take a look</p>
+        </div>
+    
+        <div class="ugnDiv">
+            <form id="queryForm" action="/" method="POST">
+                <textarea id="query" name="query"></textarea><br>
+            </form>
+        </div>
+    
+        <% if (typeof data !== 'undefined') { %>
+            <div class='ugnDiv' id="result">
+                <%- data %>
+            </div>
+        <% } %>
+    
+        <div class="ugnDiv">
+            <center><a href='https://github.com/yhynoo/szubur'>GitHub</a></center>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("query").addEventListener("keypress", function(event) {
+            if (event.key === "Enter" && !event.shiftKey) {
+                event.preventDefault(); // Prevent default form submission
+                document.getElementById("queryForm").submit(); // Submit the form
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+a {
+    color: rgb(89, 163, 233);
+}
+
+div {
+    width: 100%;
+    padding: 2em 0;
+}
+
+textarea {
+    width: 64%;
+    min-height: 4.8em;
+    border: 0;
+    border-bottom: 2px solid rgb(89, 163, 233);
+    background-color: #222;
+    color: #aaa;
+    padding: 1.2em;
+    font-size: 0.8em;
+    line-height: 1.6em;
+    font-family: monospace;
+    resize: none;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: auto;
+    background-color: #222;
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+.ugnBody {
+    width: 100%;
+    max-width: 80ch;
+    font-family: monospace;
+    font-weight: 300;
+    line-height: 1.6em;
+    font-size: 1em;
+    color: white;
+    padding: 0 1em; /* Optional: add some padding to the sides */
+    overflow: auto; /* Allow scrolling within this element if needed */
+}
+
+.ugnContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    padding: 1em; /* Add padding to prevent content from touching edges */
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.ugnHighlight {
+    color: rgb(89, 163, 233);
+}
+
+.ugnAllogram {
+    background-color: #282828;
+    border-radius: 8px;
+    text-align: left;
+    margin: 1.6em auto; /* Centering the element */
+    padding: 0.4em 2em;
+    font-size: 0.8em;
+    width: 80%;
+}
