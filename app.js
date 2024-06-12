@@ -29,6 +29,6 @@ app.post('/', asyncHandler(async (req, res) => { // Wrap the route handler with 
   res.render("index", { data: processedData });
 }));
 
-app.listen(8000, () => {
+app.listen(10000, () => {
   console.log("Server is running on http://localhost:8000");
 });
