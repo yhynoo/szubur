@@ -70,7 +70,10 @@ export async function printQuery(queryString) {
     const { transcriptionArray, transcriptionString } = cleanCDLITranscriptions(queryString)
 
     const results = await findSimilar(transcriptionString)
+    console.log(results)
+
     const parsedResults = JSON.parse(results.replace(/'/g, '"'))
+    console.log(parsedResults)
 
     const prediction = await makePrediction(transcriptionString)
     const { foundTimeExpressions, foundToponyms } = checkFeatures(transcriptionArray)
