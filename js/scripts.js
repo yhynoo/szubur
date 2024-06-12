@@ -25,7 +25,9 @@ async function findSimilar(transcriptionString) {
         .trim()
 
     const similarities = new Deno.Command('python3', { args: [ Deno.cwd() + '/ai/ai_similarity_loader.py', queryClean ] })
-    const { stdout } = await similarities.output();
+    console.log('halo')
+    const { stdout, stderr } = await similarities.output();
+    if (stderr) console.log(new TextDecoder().decode(stderr))
     return new TextDecoder().decode(stdout)
 }
 
